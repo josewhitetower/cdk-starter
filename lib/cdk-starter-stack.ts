@@ -31,10 +31,17 @@ export class CdkStarterStack extends cdk.Stack {
     }
   })
 
+  const duration = new cdk.CfnParameter(this, 'duration', {
+      default: 6,
+      minValue: 1,
+      maxValue: 10,
+      type: 'Number',
+    });
+
   //L2 construct
   const myL2Bucket = new Bucket(this, 'MyL2Bucket', {
       lifecycleRules: [{
-        expiration: cdk.Duration.days(2)
+        expiration: cdk.Duration.days(duration.valueAsNumber)
       }]
     });
 
@@ -59,4 +66,6 @@ export class CdkStarterStack extends cdk.Stack {
   cdk diff - to see the difference between the current stack and the deployed stack
   cdk doctor - to see if there are any issues with the cdk
   cdk destroy - to destroy the stack eg. cdk destroy CdkStarterStack
+
+  cdk deploy --parameters duration=5 - to deploy the stack with a parameter
  */
