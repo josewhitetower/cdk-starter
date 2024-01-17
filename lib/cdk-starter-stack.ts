@@ -32,14 +32,18 @@ export class CdkStarterStack extends cdk.Stack {
   })
 
   //L2 construct
-  new Bucket(this, 'MyL2Bucket', {
-      lifecycleRules: [{
-      expiration: cdk.Duration.days(2)
-    }]
-  })
+  const myL2Bucket = new Bucket(this, 'MyL2Bucket', {
+      lifecycleRules: [{
+        expiration: cdk.Duration.days(2)
+      }]
+    });
 
   //L3 construct
   new L3Bucker(this, 'MyL3Bucket', 3)
+
+  new cdk.CfnOutput(this, 'MyL2BucketName', {
+    value: myL2Bucket.bucketName
+  })
 
 
   }
