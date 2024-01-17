@@ -44,3 +44,15 @@ export class CdkStarterStack extends cdk.Stack {
 
   }
 }
+
+/**
+  CDK commands:
+  cdk init app --language=typescript
+  cdk bootstrap - before deploying in order to make a starter environment
+  ckk synth - to generate the cloudformation template
+  cdk deploy - to deploy the stack
+  cdk list - to list the stacks, see cdk-starter-stack.ts file
+  cdk diff - to see the difference between the current stack and the deployed stack
+  cdk doctor - to see if there are any issues with the cdk
+  cdk destroy - to destroy the stack eg. cdk destroy CdkStarterStack
+ */
