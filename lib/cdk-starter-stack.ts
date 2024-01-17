@@ -68,4 +68,11 @@ export class CdkStarterStack extends cdk.Stack {
   cdk destroy - to destroy the stack eg. cdk destroy CdkStarterStack
 
   cdk deploy --parameters duration=5 - to deploy the stack with a parameter
+
+  If you delete the stack, the s3 buckets are not deleted, by default, cdk creates s3 buckets with a different retention policy
+  check the removal policy (optional, default: the bucket will be orphaned)
+
+  When deleting stacks, some resources may not be deleted by default. For example, if you create an Amazon S3 bucket in your stack,
+  the bucket will be orphaned when you delete the stack (unless you specified a bucket name that you already owned). You can control
+  this behavior using the removal policy. For example, you can specify that the bucket should be deleted when the stack is deleted.
  */
