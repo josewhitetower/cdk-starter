@@ -66,6 +66,7 @@ export class CdkStarterStack extends cdk.Stack {
   cdk diff - to see the difference between the current stack and the deployed stack
   cdk doctor - to see if there are any issues with the cdk
   cdk destroy - to destroy the stack eg. cdk destroy CdkStarterStack
+  cdk deploy --all - to deploy all the stacksy
 
   cdk deploy --parameters duration=5 - to deploy the stack with a parameter
 
